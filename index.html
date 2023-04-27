@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js"></script>
+    <title>Formulaire</title>
+</head>
+<!--
+    Modifications: 
+    J'ai pris la liberté de changer la couleur des astérisque et de signaler que ceux si sont bien obligatoire afint de limiter le risque d'erreurs de saisie et Améliorer l’accessibilité des contenus, j'ai aussi changé la couleur de texte du bouton car le contrast était assez ffaible sur l'ancien
+    
+    Éléments manquants:
+    Le numéro su pays à coté du drapeau est manquant ainsi que la seconde flèche à coté
+-->
+
+<body>
+    <div class="container">
+        <img src="./img/logo.png" alt="">
+        <form action="#" method="post">
+            <div class="top-form">
+                <div class="barres">
+                    <div class="barre1"></div>
+                    <div class="barre2"></div>
+                </div>
+                <div class="steps">1/16</div>
+                <div class="info">Vos informations</div>
+            </div>
+            <div class="form-container">
+                <p><strong>*</strong>champs obligatoires</p>
+                <label for="prenom">PRÉNOM <strong>*</strong></label>
+                <input type="text" name="prenom" id="prenom" placeholder="Donner votre réponse ici" required>
+
+                <label for="nom">NOM <strong>*</strong></label>
+                <input type="text" name="nom" placeholder="Donner votre réponse ici" required>
+
+                <label for="adresse">ADRESSE COMPLÈTE <strong>*</strong></label>
+                <input type="text" name="adresse" placeholder="Donner votre réponse ici" required>
+
+                <label for="naissance">DATE DE NAISSANCE <strong>*</strong></label>
+                <input type="date" name="naissance" required>
+                <label for="tel"> NUMÉRO DE TÉLÉPHONE</label>
+                <input type="text" name="tel" id="tel">
+
+                <p>QUESTION À CHOIX MULTIPLES</p>
+                <!-- la balise label doit être associée aux étiquettes Oui et Non -->
+                <div class="oui_non">
+                    <div class="inputYn">
+                        <input type="radio" name="oui_non">
+                        <input type="radio" name="oui_non">
+                    </div>
+                <div class="labelYn">
+                    <label for="oui">Oui</label>
+                    <label for="non">Non</label>
+                </div>
+            </div>
+                <label for="email">ADRESSE MAIL</label>
+                <input type="email" name="email" placeholder="Donnez votre réponse ici">
+
+                
+                <div class="toggle">
+                    <p>Voulez-vous recevoir les notifications mail?</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="fichier">
+                    <div class="identite">PIÈCE D'IDENTITÉ</div>
+                    <div class="droparea">
+                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.448 4.63786C15.837 3.23387 14.7825 2.06894 13.446 1.32159C12.1096 0.574241 10.565 0.285696 9.04893 0.500173C7.53284 0.71465 6.12889 1.42032 5.05222 2.50904C3.97555 3.59776 3.28555 5.00948 3.08797 6.52786C2.13455 6.75619 1.29819 7.3267 0.737704 8.13105C0.17722 8.93541 -0.0683495 9.91759 0.0476301 10.8911C0.16361 11.8646 0.633061 12.7616 1.36683 13.4117C2.10061 14.0619 3.0476 14.4199 4.02797 14.4179C4.29318 14.4179 4.54754 14.3125 4.73507 14.125C4.92261 13.9374 5.02797 13.6831 5.02797 13.4179C5.02797 13.1526 4.92261 12.8983 4.73507 12.7108C4.54754 12.5232 4.29318 12.4179 4.02797 12.4179C3.49753 12.4179 2.98883 12.2071 2.61375 11.8321C2.23868 11.457 2.02797 10.9483 2.02797 10.4179C2.02797 9.88743 2.23868 9.37872 2.61375 9.00365C2.98883 8.62858 3.49753 8.41786 4.02797 8.41786C4.29318 8.41786 4.54754 8.31251 4.73507 8.12497C4.92261 7.93743 5.02797 7.68308 5.02797 7.41786C5.03052 6.23514 5.45225 5.09162 6.21824 4.19045C6.98422 3.28928 8.04486 2.68881 9.21172 2.49574C10.3786 2.30266 11.5761 2.52947 12.5915 3.13587C13.607 3.74227 14.3746 4.689 14.758 5.80786C14.8151 5.9797 14.9179 6.1328 15.0553 6.2508C15.1926 6.3688 15.3595 6.44728 15.538 6.47786C16.204 6.60374 16.8078 6.95147 17.251 7.4644C17.6941 7.97733 17.9505 8.62522 17.9784 9.3025C18.0062 9.97979 17.8038 10.6465 17.4043 11.1941C17.0047 11.7417 16.4315 12.1378 15.778 12.3179C15.5207 12.3842 15.3003 12.55 15.1653 12.7787C15.0303 13.0075 14.9917 13.2806 15.058 13.5379C15.1243 13.7951 15.2901 14.0155 15.5188 14.1505C15.7476 14.2856 16.0207 14.3242 16.278 14.2579C17.3304 13.9798 18.2632 13.3659 18.935 12.5093C19.6067 11.6528 19.9806 10.6005 19.9998 9.51213C20.019 8.42379 19.6826 7.35891 19.0415 6.47918C18.4005 5.59946 17.4899 4.95296 16.448 4.63786ZM10.738 6.70786C10.6429 6.61682 10.5307 6.54546 10.408 6.49786C10.1645 6.39785 9.89143 6.39785 9.64797 6.49786C9.52522 6.54546 9.41307 6.61682 9.31797 6.70786L6.31797 9.70786C6.12966 9.89617 6.02387 10.1516 6.02387 10.4179C6.02387 10.6842 6.12966 10.9396 6.31797 11.1279C6.50627 11.3162 6.76166 11.422 7.02797 11.422C7.29427 11.422 7.54966 11.3162 7.73797 11.1279L9.02797 9.82786L9 18C9 18.2652 9.10536 18.5196 9.29289 18.7071C9.48043 18.8946 9.73478 19 10 19C10.2652 19 10.5196 18.8946 10.7071 18.7071C10.8946 18.5196 11 18.2652 11 18C11 17.7348 11.028 9.82786 11.028 9.82786L12.318 11.1279C12.4109 11.2216 12.5215 11.296 12.6434 11.3468C12.7652 11.3975 12.896 11.4237 13.028 11.4237C13.16 11.4237 13.2907 11.3975 13.4125 11.3468C13.5344 11.296 13.645 11.2216 13.738 11.1279C13.8317 11.0349 13.9061 10.9243 13.9569 10.8024C14.0076 10.6806 14.0338 10.5499 14.0338 10.4179C14.0338 10.2859 14.0076 10.1551 13.9569 10.0333C13.9061 9.91143 13.8317 9.80083 13.738 9.70786L10.738 6.70786Z"
+                                fill="#888C94" />
+                        </svg>
+                        Glissez votre fichier dans cette zone
+                    </div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div class="button">
+
+                <input type="submit" name="submit" value="Suivant">
+            </div>
+        </form>
+        <p class="text-fin">We inform you that data gathered will be manage by computer only by providers of offers</p>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
